@@ -14,6 +14,12 @@ changes on the map, and save back to the original files.
 ## Getting started
 
 1. Download and run the installer. It is code-signed by **BChavez Media**.
+   For a new version, Edge may say the file "isn't commonly downloaded".
+   That's Microsoft's download-reputation check for files few people have
+   downloaded yet. It isn't a problem with the file. Choose **…** >
+   **Keep** > **Keep anyway**. To check the file, right-click it >
+   **Properties** > **Digital Signatures**: the signer should be
+   **BChavez Media**.
 2. Start the app and open a folder (see [What to open](#what-to-open)).
 3. Edit, then save. Every save keeps a backup of the original file next to it.
 
@@ -88,6 +94,7 @@ when one is missing, only the feature that uses it is unavailable.
 | `cfgplayerspawnpoints.xml` | Player spawn points on the map (editable) |
 | `cfgenvironment.xml`, `env\*.xml` | Territories and infected zones. `env\` files not listed in `cfgenvironment.xml` are flagged, since the server ignores them. |
 | `cfgspawnabletypes.xml` | Checked for duplicate classes across files |
+| `cfggameplay.json` | Gameplay tab: stamina, base building, map, temperatures and other gameplay settings |
 
 ### Which map is shown
 
@@ -165,6 +172,20 @@ also add a custom map image (see [Which map is shown](#which-map-is-shown)).
 - **Ground heights:** for maps without built-in height data, a capture script
   run once on your server records the real ground height for each position.
 
+### Gameplay
+
+The mission's `cfggameplay.json` as a settings page: stamina and movement,
+shock and drowning, base building checks, the map, the hit indicator, vehicles,
+and the monthly temperatures (with a chart).
+
+- Each setting says what it does, and shows the **vanilla value** with a reset
+  link when yours differs. **Only non-vanilla** lists just the settings you've
+  changed.
+- Older files are missing settings that newer DayZ versions added. The tab
+  lists them and can add them with vanilla values.
+- Shows whether the server actually reads the file. The server ignores it
+  unless its config has `enableCfgGameplayFile = 1`.
+
 ### DayZ Expansion (optional)
 
 Each of these tabs appears when the mission has the matching files.
@@ -183,6 +204,11 @@ Each of these tabs appears when the mission has the matching files.
 - **Mods:** the mods your server loads. Shows whether each one matches the
   Steam Workshop copy, whether it ships a keys folder, and which items it adds.
   You can add a mod's items to the mission's loot economy.
+- **Server config:** the `serverDZ*.cfg` that runs the open mission (the one
+  whose `template=` names it): server name, passwords (masked), max players,
+  time speed, 3rd person, voice, login queue, logs and more. Settings that
+  aren't in Bohemia's standard list, such as `dogtagsPlaytimeRequired`, are
+  listed too. Only the lines you change are rewritten.
 - **Profiles:** browse and edit the server's profile folder. Files are checked
   for valid syntax before saving.
 - **Files:** open any file in the mission folder in a text editor.
