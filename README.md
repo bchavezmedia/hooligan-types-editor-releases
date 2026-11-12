@@ -21,7 +21,8 @@ changes on the map, and save back to the original files.
    **Properties** > **Digital Signatures**: the signer should be
    **BChavez Media**.
 2. Start the app and open a folder (see [What to open](#what-to-open)).
-3. Edit, then save. Every save keeps a backup of the original file next to it.
+3. Edit, then save. Every save keeps a backup of the original file (see
+   [Saving and backups](#saving-and-backups)).
 
 To edit a single file, such as one `types.xml`, use **Open a single file…** or
 drag the file onto the window.
@@ -138,6 +139,7 @@ Expansion is optional. Each tab appears only when its files are found:
 | Quests | `<profiles>\ExpansionMod\Quests\Quests\` |
 | Loadouts | `<profiles>\ExpansionMod\`, or `expansion\settings\AIPatrolSettings.json` |
 | AI on the map | `expansion\settings\AIPatrolSettings.json` or `AILocationSettings.json` |
+| Missions | `expansion\missions\*.json`, or `<profiles>\ExpansionMod\Settings\AirdropSettings.json` |
 
 ## What it does
 
@@ -163,7 +165,8 @@ Nasdara**, plus the in-game paper map for all of them except Deer Isle. You can
 also add a custom map image (see [Which map is shown](#which-map-is-shown)).
 
 - **Layers:** loot tier zones, loot positions, dynamic events, territories,
-  player spawn points, infected zones, Expansion AI, traders and quests.
+  player spawn points, infected zones, Expansion AI, traders, quests and
+  missions.
 - **Edit on the map:** event positions, player spawn points (with undo),
   territory and infected zones, and Expansion AI patrols. An AI generator
   places patrols from your map's buildings.
@@ -193,11 +196,34 @@ Each of these tabs appears when the mission has the matching files.
 - **Market:** categories, traders and trader zones, with prices, stock and
   colours. Changes to buy prices can be applied to a whole category at once.
   Each trader and zone can be shown on the map.
+  **Import .map…** (Zones list, or a zone's "Placed traders") takes the
+  placements of a `.map` file, one in `expansion	raders` or any other such as
+  a DayZ Editor export: vending machines and trader characters become traders
+  (it suggests the trader file from the class name), ATMs and other objects go
+  to `expansion\objects`. Pick an existing zone or let it make one sized around
+  the traders; anything outside the zone is flagged.
 - **Hardline:** reputation and item rarity settings.
 - **Quests:** quests, NPCs and objectives, with objective locations on a map.
 - **Loadouts:** AI loadouts: clothing slots, weapon attachments, cargo, item
   sets and chances, quantity and health ranges.
 - **AI:** patrols and roaming locations, edited on the map.
+- **Missions:** airdrop and contaminated-area missions, the airdrop
+  containers' loot (`AirdropSettings.json`) and `MissionSettings.json`.
+  - Loot lists show each item's share of the picks and its average copies per
+    crate, and **Roll a crate** shows one drop, rolled the way Expansion does.
+  - **Generate…** builds a loot list from your mission's types: pick a theme
+    (Military, Medical, Base building, Food & survival…) or filter by category,
+    usage and tier. Weights follow how common each item is in your economy.
+  - Weapons come complete: parts from the weapon's attachments in your
+    spawnable types, or, where it has none, parts that fit from the game's and
+    mods' config (read from the server's `addons` and `@mod` folders), a loaded
+    magazine, and its ammo as a separate item.
+  - Checks flag entries Expansion can't spawn, misspelled classes, attachments
+    that don't fit the weapon, and nested attachments Expansion ignores.
+  - On the map, the **Missions** layer shows airdrop zones and contaminated
+    areas. Add new ones with **+ Airdrop** / **+ Contaminated area** and a
+    click, or select one to move it, change its radius or switch it off. The
+    changes go to the Missions tab, where you save them.
 
 ### Server
 
@@ -209,6 +235,24 @@ Each of these tabs appears when the mission has the matching files.
   time speed, 3rd person, voice, login queue, logs and more. Settings that
   aren't in Bohemia's standard list, such as `dogtagsPlaytimeRequired`, are
   listed too. Only the lines you change are rewritten.
+- **Zombies** (with the PvZmoD Customisable Zombies mod): the mod's
+  `PvZmoD_CustomisableZombies_Profile` files as settings pages instead of raw
+  XML.
+  - **Zombie types:** every type in a table (health, speed as walk / run /
+    sprint, damage, resistances, doors, crawlers, size; day and night), grouped
+    as in the file. Each type opens in an editor that explains every setting and
+    shows what it adds up to in game with the global multipliers. Tick several
+    types to change one setting on all of them.
+  - **Global settings:** the Globals file with switches, list editors and
+    vehicle tables.
+  - **Checks:** which entry each zombie your events spawn really uses (the first
+    type it is or inherits from, read from the game's zombie classes), zombies
+    falling through to ZombieBase, entries that can never apply, and speeds in
+    the 1.4–2.1 range the mod warns about, each with a one-click fix.
+  - **Presets:** Casual, Balanced PvE, Hardcore, Day walkers / night sprinters,
+    Walking Dead and Neutral. Each shows exactly what it changes before applying.
+  - The mod re-reads its files every 30 seconds, so saved changes apply without
+    a restart.
 - **Profiles:** browse and edit the server's profile folder. Files are checked
   for valid syntax before saving.
 - **Files:** open any file in the mission folder in a text editor.
@@ -218,8 +262,12 @@ Each of these tabs appears when the mission has the matching files.
 - Files are saved in place, and only what you edited changes. Comments,
   element order, indentation and line endings are kept, so a save gives a
   clean diff.
-- A `.bak` backup is written before each save. You choose how many backups to
-  keep per file in **Settings**.
+- A `.bak` backup is written before each save. By default backups go to a
+  backup folder (`Documents\Hooligans Types Editor Backups`), laid out like the
+  original folders, so your server folders stay clean. In **Settings** you can
+  pick another folder or keep backups next to each file, choose how many to
+  keep per file, and move older backups lying next to your files into the
+  backup folder.
 - Tabs with unsaved changes are marked with **•**, and the app asks before
   discarding them.
 
