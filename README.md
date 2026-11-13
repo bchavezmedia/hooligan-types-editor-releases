@@ -195,6 +195,10 @@ Each of these tabs appears when the mission has the matching files.
 
 - **Market:** categories, traders and trader zones, with prices, stock and
   colours. Changes to buy prices can be applied to a whole category at once.
+  **Prices** lists every market item across all categories in one table:
+  edit min / max price and sell % in place, filter (search, types category,
+  price 0, fixed prices…), and change the ticked items, or everything shown,
+  together (buy price ± %, set a price, make it fixed, set sell %).
   Each trader and zone can be shown on the map.
   **Import .map…** (Zones list, or a zone's "Placed traders") takes the
   placements of a `.map` file, one in `expansion	raders` or any other such as
