@@ -198,7 +198,10 @@ Each of these tabs appears when the mission has the matching files.
   **Prices** lists every market item across all categories in one table:
   edit min / max price and sell % in place, filter (search, types category,
   price 0, fixed prices…), and change the ticked items, or everything shown,
-  together (buy price ± %, set a price, make it fixed, set sell %).
+  together (buy price ± %, set a price, make it fixed, set sell %). With
+  Hardline, it also shows each item's rarity and the reputation needed to buy
+  it, and rarities can be set there one by one or for many items at once (they
+  are saved with the Hardline tab).
   Each trader and zone can be shown on the map.
   **Import .map…** (Zones list, or a zone's "Placed traders") takes the
   placements of a `.map` file, one in `expansion	raders` or any other such as
