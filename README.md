@@ -227,6 +227,13 @@ Each of these tabs appears when the mission has the matching files.
     magazine, and its ammo as a separate item.
   - Checks flag entries Expansion can't spawn, misspelled classes, attachments
     that don't fit the weapon, and nested attachments Expansion ignores.
+- **Safe zones** (Map tab, Expansion): the mission's `SafeZoneSettings.json`
+  drawn on the map. Add circles, polygons (click the corners) and cylinders
+  (a circle between two heights), or a circle over a trader zone in one click;
+  drag zones, edges and corners to shape them. The side panel has the
+  settings (on/off, collision, vehicle damage, clean-up times, items never
+  cleaned up). Circles and polygons ignore height; a cylinder covers from its
+  centre's height up to that height + Height.
   - On the map, the **Missions** layer shows airdrop zones and contaminated
     areas. Add new ones with **+ Airdrop** / **+ Contaminated area** and a
     click, or select one to move it, change its radius or switch it off. The
