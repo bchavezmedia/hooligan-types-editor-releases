@@ -136,6 +136,7 @@ Expansion is optional. Each tab appears only when its files are found:
 |---|---|
 | Market | `<profiles>\ExpansionMod\Market\` or `Traders\`, or the mission's `expansion\traderzones\` |
 | Hardline | `expansion\settings\HardlineSettings.json` |
+| Book | `<profiles>\ExpansionMod\Settings\BookSettings.json` |
 | Quests | `<profiles>\ExpansionMod\Quests\Quests\` |
 | Loadouts | `<profiles>\ExpansionMod\`, or `expansion\settings\AIPatrolSettings.json` |
 | AI on the map | `expansion\settings\AIPatrolSettings.json` or `AILocationSettings.json` |
@@ -210,6 +211,9 @@ Each of these tabs appears when the mission has the matching files.
   to `expansion\objects`. Pick an existing zone or let it make one sized around
   the traders; anything outside the zone is flagged.
 - **Hardline:** reputation and item rarity settings.
+- **Book:** the in-game Expansion book: which tabs it shows, the server rules,
+  the server info page (descriptions, links, settings) and the crafting recipe
+  categories. Categories and entries can be added, reordered and removed.
 - **Quests:** quests, NPCs and objectives, with objective locations on a map.
 - **Loadouts:** AI loadouts: clothing slots, weapon attachments, cargo, item
   sets and chances, quantity and health ranges.
