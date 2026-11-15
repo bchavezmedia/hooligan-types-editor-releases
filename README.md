@@ -211,6 +211,11 @@ Each of these tabs appears when the mission has the matching files.
   to `expansion\objects`. Pick an existing zone or let it make one sized around
   the traders; anything outside the zone is flagged.
 - **Hardline:** reputation and item rarity settings.
+- **Bunkers:** the bunker broadcast system (`cfgbunkerbroadcast.json`): how many
+  bunkers are active, lock codes, the active hours with their real-time length
+  at the server's time speed, and which bunkers are switched on. Shows each
+  bunker's map tier and edits the usage tags / fixed tier of the bunker building
+  types in `mapgroupproto.xml`.
 - **Book:** the in-game Expansion book: which tabs it shows, the server rules,
   the server info page (descriptions, links, settings) and the crafting recipe
   categories. Categories and entries can be added, reordered and removed.
