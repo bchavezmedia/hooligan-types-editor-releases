@@ -216,6 +216,11 @@ Each of these tabs appears when the mission has the matching files.
   at the server's time speed, and which bunkers are switched on. Shows each
   bunker's map tier and edits the usage tags / fixed tier of the bunker building
   types in `mapgroupproto.xml`.
+- **Spawner:** the SpawnerBubaku mod's files in the profiles folder: triggers
+  (position and shape, active hours, what spawns and how many, spawn points)
+  placed on the map, and the objects spawned at server start. Fills in ground
+  heights, lists the mission's tunnel sections as places with known heights, and
+  warns about the mod's traps (commas in coordinates, scatter underground).
 - **Book:** the in-game Expansion book: which tabs it shows, the server rules,
   the server info page (descriptions, links, settings) and the crafting recipe
   categories. Categories and entries can be added, reordered and removed.
